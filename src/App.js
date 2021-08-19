@@ -29,8 +29,16 @@ const App = () => {
 
     const handleDelete = (event) => {
         axios
-            .delete('https://blooming-thicket-84174.herokuapp.com/api/shows/'
-            + event.target.value)
+            .delete(`https://blooming-thicket-84174.herokuapp.com/api/shows/${event.target.value}`)
+            .then((response) => {
+                getShows()
+            })
+    }
+
+    const handleUpdate = (editShow) => {
+        console.log(editShow)
+        axios
+            .put(`https://blooming-thicket-84174.herokuapp.com/api/shows/${editShow.id}`, editShow)
             .then((response) => {
                 getShows()
             })
@@ -72,6 +80,10 @@ const App = () => {
                             {/* <h5>Added By: {show.added_by}</h5>
                             <h5>User Ratings: {show.user_ratings}</h5>
                             <h5>User Reviews: {show.user_reviews}</h5> */}
+                            <Edit 
+                                handleUpdate={handleUpdate}
+                                show={show}
+                            />
                             <button onClick={handleDelete} value={show.id}>Delete</button>
                             <br />
                         </div>
