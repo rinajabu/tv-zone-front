@@ -14,6 +14,7 @@ const Add = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleCreate(show)
+        event.target.reset()
     }
 
     return (
@@ -54,7 +55,7 @@ const Add = (props) => {
                 <br />
 
                 <label htmlFor='video'>Video: </label>
-                <input type='text' name='video' value={show.video} onChange={handleChange} />
+                <input type='url' name='video' value={show.video} onChange={handleChange} />
 
                 <br />
                 <br />
