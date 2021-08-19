@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 // CREATE component
 const Add = (props) => {
 
-    let emptyShow = { title: '', genre: '', year: '', description: '', cast: '', avg_rating: '', video: '', added_by: '', user_ratings: '', user_reviews: ''}
+    let emptyShow = { title: '', genre: '', year: '', description: '', cast: '', avg_rating: '', video: '', added_by: [], user_ratings: [], user_reviews: []}
     let [show, setShow] = useState(emptyShow)
 
     const handleChange = (event) => {
@@ -57,19 +57,14 @@ const Add = (props) => {
                 <input type='text' name='video' value={show.video} onChange={handleChange} />
 
                 <br />
-
-                <label htmlFor='added_by'>Added By: </label>
-                <input type='text' name='added_by' value={show.added_by} onChange={handleChange} />
-
                 <br />
 
-                <label htmlFor='user_ratings'>User Ratings</label>
-                <input type='text' name='user_ratings' value={show.user_ratings} onChange={handleChange} />
-
-                <br />
-
-                <label htmlFor='user_reviews'>User Reviews</label>
-                <input type='text' name='user_reviews' value={show.user_reviews} onChange={handleChange} />
+                {/* <label htmlFor='added_by'>Added By: </label> */}
+                <input hidden type='text' name='added_by[]' value={show.added_by} onChange={handleChange} />
+                {/* <label htmlFor='user_ratings'>User Ratings</label> */}
+                <input hidden type='text' name='user_ratings[]' value={show.user_ratings} onChange={handleChange} />
+                {/* <label htmlFor='user_reviews'>User Reviews</label> */}
+                <input hidden type='text' name='user_reviews[]' value={show.user_reviews} onChange={handleChange} />
 
                 <input type='submit' />
 

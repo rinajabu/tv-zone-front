@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css';
 
+// Components Import
+import Add from './components/Add'
+import Edit from './components/Edit'
+
 const App = () => {
 
 // ==================
@@ -15,7 +19,7 @@ const App = () => {
 
     const handleCreate = (addShow) => {
         axios
-            .post('http://localhost:8000/api/shows',
+            .post('https://blooming-thicket-84174.herokuapp.com/api/shows',
             addShow)
             .then((response) => {
                 console.log(response)
@@ -65,9 +69,9 @@ const App = () => {
                             <h5>Cast: {show.cast}</h5>
                             <h5>Average Rating: {show.avg_rating}</h5>
                             <h5>Video: {show.video}</h5>
-                            <h5>Added By: {show.added_by}</h5>
+                            {/* <h5>Added By: {show.added_by}</h5>
                             <h5>User Ratings: {show.user_ratings}</h5>
-                            <h5>User Reviews: {show.user_reviews}</h5>
+                            <h5>User Reviews: {show.user_reviews}</h5> */}
                             <button onClick={handleDelete} value={show.id}>Delete</button>
                             <br />
                         </div>
