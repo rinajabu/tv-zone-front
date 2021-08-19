@@ -61,7 +61,7 @@ const Edit = (props) => {
                 {/* <label htmlFor='user_reviews'>User Reviews</label> */}
                 <input hidden type='text' name='user_reviews[]' defaultValue={show.user_reviews} onChange={handleChange} />
 
-                <input type='submit' />
+                <input type='submit' value='Edit' />
             </form>
         </details>
     )
