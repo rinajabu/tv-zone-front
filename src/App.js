@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css';
 
-// ==================
-// Component Imports
-// ==================
+// Components Import
 import Add from './components/Add'
+import Edit from './components/Edit'
 
 const App = () => {
 
@@ -75,7 +74,7 @@ const App = () => {
                                 </video>
                             <h5>Added By: {show.added_by}</h5>
                             <h5>User Ratings: {show.user_ratings}</h5>
-                            <h5>User Reviews: {show.user_reviews}</h5>
+                            <h5>User Reviews: {show.user_reviews}</h5> */}
                             <button onClick={handleDelete} value={show.id}>Delete</button>
                             <br />
                         </div>
