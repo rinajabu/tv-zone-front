@@ -15,7 +15,7 @@ const App = () => {
 
     const getShows = () => {
         axios
-            .get('http://localhost:8000/api/shows')
+            .get('https://blooming-thicket-84174.herokuapp.com/api/shows')
             .then(
                 (response) => setShows(response.data),
                 (error) => console.error(error)
