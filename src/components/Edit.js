@@ -11,5 +11,8 @@ const Edit = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(show)
+    
     }
 }
+
+export default Edit
