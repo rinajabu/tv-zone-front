@@ -8,7 +8,10 @@ import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import Filter from './components/Filter'
+
 import DeleteShow from './components/DeleteShow'
+import Topnav from './components/Topnav'
+
 
 const App = () => {
 
@@ -73,7 +76,7 @@ const App = () => {
 // ======================
     return (
         <>
-            <h1>TV Zone</h1>
+            <Topnav />
             <Add handleCreate={handleCreate} />
             <Filter
                 updateFilter={updateFilter}
