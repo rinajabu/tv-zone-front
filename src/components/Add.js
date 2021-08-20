@@ -3,18 +3,18 @@ import React, { useState } from 'react'
 // CREATE component
 const Add = (props) => {
 
-    let emptyShow = { title: '', genre: '', year: '', description: '', cast: '', avg_rating: '', video: '', added_by: [], user_ratings: [], user_reviews: []}
+    let emptyShow = { title: '', genre: 'Horror', year: '', description: '', cast: '', avg_rating: '1', video: '', added_by: [], user_ratings: [], user_reviews: []} // default values for genre and avg_rating dropdowns
     let [show, setShow] = useState(emptyShow)
 
     const handleChange = (event) => {
-        setShow({ ...show, [event.target.name]:
-        event.target.value })
+        setShow({ ...show, [event.target.name]: event.target.value })
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleCreate(show)
         event.target.reset()
+        setShow(emptyShow) // resets create form field
     }
 
     return (
@@ -30,7 +30,13 @@ const Add = (props) => {
                 <br />
 
                 <label htmlFor='genre'>Genre: </label>
-                <input type='text' name='genre' onChange={handleChange} />
+                <select onChange={handleChange} name='genre'>
+                    <option selected value='Horror'>Horror</option>
+                    <option value='Comedy'>Comedy</option>
+                    <option value='Action'>Action</option>
+                    <option value='Drama'>Drama</option>
+                    <option value='Sci-fi'>Sci-Fi</option>
+                </select>
 
                 <br />
 
@@ -50,7 +56,13 @@ const Add = (props) => {
                 <br />
 
                 <label htmlFor='avg_rating'>Average Rating: </label>
-                <input type='text' name='avg_rating' onChange={handleChange} />
+                <select onChange={handleChange} name='avg_rating'>
+                    <option selected value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                </select>
 
                 <br />
 
