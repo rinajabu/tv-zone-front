@@ -8,6 +8,7 @@ import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import Filter from './components/Filter'
+import DeleteShow from './components/DeleteShow'
 
 const App = () => {
 
@@ -57,7 +58,7 @@ const App = () => {
             )
             .catch((error) => console.error(error))
     }
-    
+
     const updateFilter = (event) => {
         setFilterBy(event.target.value)
     }
@@ -74,7 +75,7 @@ const App = () => {
         <>
             <h1>TV Zone</h1>
             <Add handleCreate={handleCreate} />
-            <Filter 
+            <Filter
                 updateFilter={updateFilter}
                 filterBy={filterBy}
             />
@@ -85,15 +86,11 @@ const App = () => {
                         return (
                         <div className='show' key={show.id}>
                             <Show show={show}/>
-                            <Edit 
+                            <Edit
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
-                            <button 
-                                class="btn btn-danger"
-                                onClick={handleDelete} 
-                                value={show.id}>Delete
-                            </button>
+                    <DeleteShow handleDelete={handleDelete} />
                             <br />
                         </div>
                     )
@@ -116,7 +113,7 @@ const App = () => {
                             <br />
                         </div>
                     )
-                })} 
+                })}
             </div>
         </>
     )
