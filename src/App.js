@@ -6,6 +6,7 @@ import './App.css';
 import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
+import Filter from './components/Filter'
 
 const App = () => {
 
@@ -67,6 +68,7 @@ const App = () => {
         <>
             <h1>TV Zone</h1>
             <Add handleCreate={handleCreate} />
+            <Filter />
             <div className='shows'>
                 {shows.map((show) => {
                     return (
