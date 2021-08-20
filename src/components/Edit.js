@@ -24,7 +24,13 @@ const Edit = (props) => {
                 <br />
 
                 <label htmlFor='genre'>Genre: </label>
-                <input type='text' name='genre' defaultValue={show.genre} onChange={handleChange} />
+                <select onChange={handleChange} defaultValue={show.genre} name='genre'>
+                    <option value='Horror'>Horror</option>
+                    <option value='Comedy'>Comedy</option>
+                    <option value='Action'>Action</option>
+                    <option value='Drama'>Drama</option>
+                    <option value='Sci-fi'>Sci-Fi</option>
+                </select>
 
                 <br />
 
@@ -44,7 +50,13 @@ const Edit = (props) => {
                 <br />
 
                 <label htmlFor='avg_rating'>Average Rating: </label>
-                <input type='text' name='avg_rating' defaultValue={show.avg_rating} onChange={handleChange} />
+                <select onChange={handleChange} defaultValue={show.avg_rating} name='avg_rating'>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                </select>
 
                 <br />
 
