@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 
 // Components Import
 import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
+import Filter from './components/Filter'
 
 const App = () => {
 
@@ -13,6 +15,7 @@ const App = () => {
 // State
 // ==================
     let [shows, setShows] = useState([])
+    const [filterBy, setFilterBy] = useState('All')
 
 // ==================
 // Event Handlers
@@ -54,6 +57,10 @@ const App = () => {
             )
             .catch((error) => console.error(error))
     }
+    
+    const updateFilter = (event) => {
+        setFilterBy(event.target.value)
+    }
 
     useEffect(() => {
         getShows()
@@ -67,10 +74,36 @@ const App = () => {
         <>
             <h1>TV Zone</h1>
             <Add handleCreate={handleCreate} />
+            <Filter 
+                updateFilter={updateFilter}
+                filterBy={filterBy}
+            />
             <div className='shows'>
-                {shows.map((show) => {
+                {/* start filter by All */}
+                { filterBy === 'All' &&
+                    shows.map((show) => {
+                        return (
+                        <div className='show' key={show.id}>
+                            <Show show={show}/>
+                            <Edit 
+                                handleUpdate={handleUpdate}
+                                show={show}
+                            />
+                            <button 
+                                class="btn btn-danger"
+                                onClick={handleDelete} 
+                                value={show.id}>Delete
+                            </button>
+                            <br />
+                        </div>
+                    )
+                    })
+                }
+                {/* start filter by category */}
+                {shows.filter(shows => shows.genre == filterBy).map((show) => {
                     return (
                         <div className='show' key={show.id}>
+                            <h2>All {show.genre}</h2>
                             <Show show={show}/>
                             <Edit 
                                 handleUpdate={handleUpdate}
@@ -83,7 +116,7 @@ const App = () => {
                             <br />
                         </div>
                     )
-                })}
+                })} 
             </div>
         </>
     )
