@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+/* PERSONAL STYLING */
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-nav {
+  padding: .5em 1em;
+}
+
+.nav-title {
+  font-size: 2em;
+}
+
+.open-nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.sign-up-btn {
+  margin-right: 1em;
+}
