@@ -79,7 +79,7 @@ const Add = (props) => {
                 {/* <label htmlFor='user_reviews'>User Reviews</label> */}
                 <input hidden type='text' name='user_reviews[]' onChange={handleChange} />
 
-                <input type='submit' />
+                <input class="btn btn-dark" type='submit' />
 
             </form>
         </>
