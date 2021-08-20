@@ -5,7 +5,7 @@ const Filter = (props) => {
     return (
         <label className='filter-dropdown'>
             <strong>Filter By Genre: </strong>
-            <select value={props.filterBy} onChange={props.updateFilter}>
+            <select defaultValue={props.filterBy} onChange={props.updateFilter}>
                 <option value='All'>All</option>
                 <option value='Horror'>Horror</option>
                 <option value='Comedy'>Comedy</option>
