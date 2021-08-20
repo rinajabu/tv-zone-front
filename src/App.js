@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 
 // Components Import
+import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
 
@@ -29,8 +30,16 @@ const App = () => {
 
     const handleDelete = (event) => {
         axios
-            .delete('https://blooming-thicket-84174.herokuapp.com/api/shows/'
-            + event.target.value)
+            .delete(`https://blooming-thicket-84174.herokuapp.com/api/shows/${event.target.value}`)
+            .then((response) => {
+                getShows()
+            })
+    }
+
+    const handleUpdate = (editShow) => {
+        console.log(editShow)
+        axios
+            .put(`https://blooming-thicket-84174.herokuapp.com/api/shows/${editShow.id}`, editShow)
             .then((response) => {
                 getShows()
             })
@@ -62,20 +71,15 @@ const App = () => {
                 {shows.map((show) => {
                     return (
                         <div className='show' key={show.id}>
-                            <h4>{show.title}</h4>
-                            <h5>Genre: {show.genre}</h5>
-                            <h5>Year: {show.year}</h5>
-                            <h5>Description: {show.description}</h5>
-                            <h5>Cast: {show.cast}</h5>
-                            <h5>Average Rating: {show.avg_rating}</h5>
-                            <h5>Video:</h5>
-                                <video width='320' height='240' controls>
-                                    <source src={show.video} type='video/mp4' />
-                                </video>
-                            <h5>Added By: {show.added_by}</h5>
-                            <h5>User Ratings: {show.user_ratings}</h5>
-                            <h5>User Reviews: {show.user_reviews}</h5>
-                            <button onClick={handleDelete} value={show.id}>Delete</button>
+                            <Show show={show}/>
+                            <Edit
+                                handleUpdate={handleUpdate}
+                                show={show}
+                            />
+                            <button
+                                onClick={handleDelete}
+                                value={show.id}>Delete
+                            </button>
                             <br />
                         </div>
                     )
