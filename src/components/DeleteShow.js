@@ -9,8 +9,6 @@ const DeleteShow = (props) => {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
-
-
     return (
         <>
             <Button class='btn btn-danger' onClick={ handleShow }>
@@ -26,7 +24,7 @@ const DeleteShow = (props) => {
                     <Button class='btn btn-secondary' onClick={ handleClose }>
                         Cancel
                     </Button>
-                    <Button class='btn btn-danger' onClick={ handleClose }>
+                    <Button class='btn btn-danger' onClick={ props.handleDelete } value={props.show.id}>
                         Delete
                     </Button>
                 </Modal.Footer>

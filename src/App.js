@@ -93,14 +93,18 @@ const App = () => {
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
-                    <DeleteShow handleDelete={handleDelete} />
-                            <br />
+                        <DeleteShow 
+                            handleDelete={handleDelete} 
+                            value={show.id}
+                            show={show}
+                        />
+                        <br />
                         </div>
                     )
                     })
                 }
                 {/* start filter by category */}
-                {shows.filter(shows => shows.genre == filterBy).map((show) => {
+                {shows.filter(shows => shows.genre === filterBy).map((show) => {
                     return (
                         <div className='show' key={show.id}>
                             <h2>All {show.genre}</h2>
@@ -109,10 +113,15 @@ const App = () => {
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
-                            <button
+                            <DeleteShow 
+                            handleDelete={handleDelete} 
+                            value={show.id}
+                            show={show}
+                            />
+                            {/* <button
                                 onClick={handleDelete}
                                 value={show.id}>Delete
-                            </button>
+                            </button> */}
                             <br />
                         </div>
                     )
