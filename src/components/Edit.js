@@ -90,7 +90,7 @@ const Edit = (props) => {
                         {/* <label htmlFor='user_reviews'>User Reviews</label> */}
                         <input hidden type='text' name='user_reviews[]' defaultValue={tvShow.user_reviews} onChange={handleChange} />
 
-                        <input type='submit' value='Edit' />
+                        <input class="btn btn-success" type='submit' value='Edit' />
                     </form>
                 </Modal.Body>
             </Modal>
