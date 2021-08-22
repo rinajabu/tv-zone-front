@@ -15,7 +15,7 @@ const DeleteShow = (props) => {
                 Delete Show
             </Button>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Are you sure you want to delete this show?</Modal.Title>
                 </Modal.Header>
