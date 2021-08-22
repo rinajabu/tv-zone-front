@@ -86,47 +86,44 @@ const App = () => {
                 filterBy={filterBy}
             />
 
-            <div className='shows'>
+            <>
                 { filterBy === 'All' && shows.map((show) => {
-                        return (
-                            <Carousel>
-                                <Card className='card'>
-                                    {/*<Card.Img varient='top' className='card-img' />*/}
-                                    <Card.Item className='show' key={show.id}>
-                                        <iframe className='video' src={show.video}></iframe>
-                                        <Card.Body>
-                                            <Card.Title>
-                                                <h1>{show.title}</h1>
-                                            </Card.Title>
-                                            <Card.Text>
-                                            <h5>Genre: {show.genre}</h5>
-                                            <h5>Year: {show.year}</h5>
-                                            <h5>Description: {show.description}</h5>
-                                            <h5>Cast: {show.cast}</h5>
-                                            <h5>Average Rating: {show.avg_rating}</h5>
-                                            {/* <h5>Added By: {show.added_by}</h5>
-                                            <h5>User Ratings: {show.user_ratings}</h5>
-                                            <h5>User Reviews: {show.user_reviews}</h5> */}
-                                            </Card.Text>
-                                        </Card.Body>
-                                        <Card.Footer>
-                                            <Edit
-                                                handleUpdate={handleUpdate}
-                                                show={show}
-                                            />
-                                            <DeleteShow
-                                                handleDelete={handleDelete}
-                                                value={show.id}
-                                                show={show}
-                                            />
-                                        </Card.Footer>
-                                    </Card.Item>
-                                </Card>
-                            </Carousel>
-                        )
-                    })
-                }
-            </div>
+                    return (
+                        <>
+                            <Card className='card'>
+                                <Card.Img varient='top' className='card-img' />
+                                        <iframe src={show.video}></iframe>
+                                <Card.Body>
+                                    <Card.Title>
+                                        <h1>{show.title}</h1>
+                                    </Card.Title>
+                                    <Card.Text>
+                                        <h5>Genre: {show.genre}</h5>
+                                        <h5>Year: {show.year}</h5>
+                                        <h5>Description: {show.description}</h5>
+                                        <h5>Cast: {show.cast}</h5>
+                                        <h5>Average Rating: {show.avg_rating}</h5>
+                                        {/* <h5>Added By: {show.added_by}</h5>
+                                        <h5>User Ratings: {show.user_ratings}</h5>
+                                        <h5>User Reviews: {show.user_reviews}</h5> */}
+                                    </Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                    <Edit
+                                        handleUpdate={handleUpdate}
+                                        show={show}
+                                    />
+                                    <DeleteShow
+                                        handleDelete={handleDelete}
+                                        value={show.id}
+                                        show={show}
+                                    />
+                                </Card.Footer>
+                            </Card>
+                        </>
+                    )
+                })}
+            </>
 
 
 
