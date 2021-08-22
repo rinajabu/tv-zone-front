@@ -93,12 +93,12 @@ const App = () => {
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
-                        <DeleteShow 
-                            handleDelete={handleDelete} 
-                            value={show.id}
-                            show={show}
-                        />
-                        <br />
+                            <DeleteShow 
+                                handleDelete={handleDelete} 
+                                value={show.id}
+                                show={show}
+                            />
+                            <br />
                         </div>
                     )
                     })
@@ -107,21 +107,16 @@ const App = () => {
                 {shows.filter(shows => shows.genre === filterBy).map((show) => {
                     return (
                         <div className='show' key={show.id}>
-                            <h2>All {show.genre}</h2>
                             <Show show={show}/>
                             <Edit
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
                             <DeleteShow 
-                            handleDelete={handleDelete} 
-                            value={show.id}
-                            show={show}
+                                handleDelete={handleDelete} 
+                                value={show.id}
+                                show={show}
                             />
-                            {/* <button
-                                onClick={handleDelete}
-                                value={show.id}>Delete
-                            </button> */}
                             <br />
                         </div>
                     )
