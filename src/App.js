@@ -8,7 +8,10 @@ import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import Filter from './components/Filter'
+
+import DeleteShow from './components/DeleteShow'
 import Topnav from './components/Topnav'
+
 
 const App = () => {
 
@@ -58,7 +61,7 @@ const App = () => {
             )
             .catch((error) => console.error(error))
     }
-    
+
     const updateFilter = (event) => {
         setFilterBy(event.target.value)
     }
@@ -75,7 +78,7 @@ const App = () => {
         <>
             <Topnav />
             <Add handleCreate={handleCreate} />
-            <Filter 
+            <Filter
                 updateFilter={updateFilter}
                 filterBy={filterBy}
             />
@@ -86,38 +89,38 @@ const App = () => {
                         return (
                         <div className='show' key={show.id}>
                             <Show show={show}/>
-                            <Edit 
+                            <Edit
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
-                            <button 
-                                class="btn btn-danger"
-                                onClick={handleDelete} 
-                                value={show.id}>Delete
-                            </button>
+                            <DeleteShow 
+                                handleDelete={handleDelete} 
+                                value={show.id}
+                                show={show}
+                            />
                             <br />
                         </div>
                     )
                     })
                 }
                 {/* start filter by category */}
-                {shows.filter(shows => shows.genre == filterBy).map((show) => {
+                {shows.filter(shows => shows.genre === filterBy).map((show) => {
                     return (
                         <div className='show' key={show.id}>
-                            <h2>All {show.genre}</h2>
                             <Show show={show}/>
-                            <Edit 
+                            <Edit
                                 handleUpdate={handleUpdate}
                                 show={show}
                             />
-                            <button 
-                                onClick={handleDelete} 
-                                value={show.id}>Delete
-                            </button>
+                            <DeleteShow 
+                                handleDelete={handleDelete} 
+                                value={show.id}
+                                show={show}
+                            />
                             <br />
                         </div>
                     )
-                })} 
+                })}
             </div>
         </>
     )
