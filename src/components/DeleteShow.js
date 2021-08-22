@@ -9,11 +9,9 @@ const DeleteShow = (props) => {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
-
-
     return (
         <>
-            <Button class='btn btn-danger' onClick={ handleShow }>
+            <Button className='btn btn-danger' onClick={ handleShow }>
                 Delete Show
             </Button>
 
@@ -23,10 +21,10 @@ const DeleteShow = (props) => {
                 </Modal.Header>
                 <Modal.Body>This action cannot be undone.</Modal.Body>
                 <Modal.Footer>
-                    <Button class='btn btn-secondary' onClick={ handleClose }>
+                    <Button className='btn btn-secondary' onClick={ handleClose }>
                         Cancel
                     </Button>
-                    <Button class='btn btn-danger' onClick={ handleClose }>
+                    <Button className='btn btn-danger' onClick={ props.handleDelete } value={props.show.id}>
                         Delete
                     </Button>
                 </Modal.Footer>

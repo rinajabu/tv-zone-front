@@ -30,8 +30,8 @@ const Add = (props) => {
                 <br />
 
                 <label htmlFor='genre'>Genre: </label>
-                <select onChange={handleChange} name='genre'>
-                    <option selected value='Horror'>Horror</option>
+                <select onChange={handleChange} name='genre' defaultValue={show.genre}>
+                    <option value='Horror'>Horror</option>
                     <option value='Comedy'>Comedy</option>
                     <option value='Action'>Action</option>
                     <option value='Drama'>Drama</option>
