@@ -13,6 +13,9 @@ import Edit from './components/Edit'
 import Filter from './components/Filter'
 import DeleteShow from './components/DeleteShow'
 import Topnav from './components/Topnav'
+import Favorites from './components/Favorites'
+
+
 import Signup from './components/Signup'
 import Auth from './components/Auth'
 
@@ -116,8 +119,12 @@ const App = () => {
     return (
         <>
             <Topnav />
+
+            <Favorites />
+
             <Signup handleUserCreate={handleUserCreate} />
             <Auth handleUserLogin={handleUserLogin} currentUser={currentUser} />
+
             <Add handleCreate={handleCreate} />
             <Filter
                 updateFilter={updateFilter}
