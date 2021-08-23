@@ -98,7 +98,7 @@ a {
 .video {
   width: 100%;
   height: auto;
-} 
+}
 
 .create-submit-btn, .edit-submit-btn {
   display: block;
@@ -150,8 +150,13 @@ a {
      background-color: #66656B;
  }
 
- .nav-btn {
+ .nav-btn, .logos-container {
      background-color: #D4D1DE;
+ }
+
+ .footer-container {
+     background-color: #212529;
+     color: #D4D1DE;
  }
 
 /*///// MEDIA QUERIES /////*/
@@ -168,4 +173,3 @@ a {
     }
 
 }
-
