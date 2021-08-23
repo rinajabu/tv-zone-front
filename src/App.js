@@ -13,7 +13,12 @@ import Edit from './components/Edit'
 import Filter from './components/Filter'
 import DeleteShow from './components/DeleteShow'
 import Topnav from './components/Topnav'
+import Footer from './components/Footer'
+import Favorites from './components/Favorites'
 
+
+import Signup from './components/Signup'
+import Auth from './components/Auth'
 
 const App = () => {
 
@@ -23,11 +28,15 @@ const App = () => {
     let [shows, setShows] = useState([])
     const [filterBy, setFilterBy] = useState('All')
 
+    let [users, setUsers] = useState([])
+    let [currentUser, setCurrentUser] = useState({})
+
 // ==================
 // Event Handlers
 // ==================
 
     const handleCreate = (addShow) => {
+        console.log(addShow);
         axios
             .post('https://blooming-thicket-84174.herokuapp.com/api/shows',
             addShow)
@@ -35,6 +44,7 @@ const App = () => {
                 console.log(response)
                 getShows()
             })
+        console.log(addShow);
     }
 
     const handleDelete = (event) => {
@@ -68,10 +78,43 @@ const App = () => {
         setFilterBy(event.target.value)
     }
 
+    const getUsers = () => {
+        axios
+            .get('https://blooming-thicket-84174.herokuapp.com/api/users')
+            // .get('http://localhost:8000/api/users')
+            .then(
+                (response) => setUsers(response.data),
+                (error) => console.error(error)
+            )
+            .catch((error) => console.error(error)
+      )
+    }
+
+    const handleUserCreate = (addUser) => {
+        axios
+          .post('https://blooming-thicket-84174.herokuapp.com/api/users',
+          // .post('http://localhost:8000/api/users',
+          addUser)
+          .then((response) => {
+            getUsers()
+          })
+    }
+
+    const handleUserLogin = (user) => {
+      axios
+      .put('https://blooming-thicket-84174.herokuapp.com/api/users/login', user)
+      // .put('http://localhost:8000/api/users/login', user)
+      .then(
+        (response) => {
+        setCurrentUser(response.data)
+        console.log(response.data)
+      }
+      )
+    }
+
     useEffect(() => {
         getShows()
     }, [])
-
 
 // ======================
 // Rendering to browser
@@ -79,6 +122,12 @@ const App = () => {
     return (
         <>
             <Topnav />
+
+            <Favorites />
+
+            <Signup handleUserCreate={handleUserCreate} />
+            <Auth handleUserLogin={handleUserLogin} currentUser={currentUser} />
+
             <Add handleCreate={handleCreate} />
             <Filter
                 updateFilter={updateFilter}
@@ -113,6 +162,7 @@ const App = () => {
                     )
                 })}
             </>
+            <br />
             <>
                 {/* start filter by category */}
                 {shows.filter(shows => shows.genre === filterBy).map((show) => {
@@ -143,6 +193,7 @@ const App = () => {
                     )
                 })}
             </>
+            <Footer />
         </>
     )
 }

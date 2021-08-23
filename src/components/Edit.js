@@ -47,6 +47,7 @@ const Edit = (props) => {
                                 <option value='Action'>Action</option>
                                 <option value='Drama'>Drama</option>
                                 <option value='Sci-fi'>Sci-Fi</option>
+                                <option value='Feel-Good'>Feel-Good</option>
                             </Form.Select>
                         </FloatingLabel>
                         <FloatingLabel label="Year" className="mb-3">
