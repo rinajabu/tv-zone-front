@@ -23,6 +23,7 @@ const Add = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleCreate(tvShow)
+        // console.log(tvShow);
         event.target.reset()
         setTvShow(emptyShow) // resets create form field
         handleClose()
