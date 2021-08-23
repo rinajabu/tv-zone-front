@@ -13,13 +13,11 @@ const Auth = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.handleUserLogin(user)
-    console.log(user);
     event.target.reset()
   }
 
   return(
     <>
-      {props.currentUser.username && <h1>Welcome, {props.currentUser.username}</h1>}
       <br />
       <br />
 
