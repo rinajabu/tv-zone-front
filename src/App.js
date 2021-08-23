@@ -3,12 +3,14 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
+import Card from 'react-bootstrap/Card'
+import Carousel from 'react-bootstrap/Carousel'
+
 // Components Import
 import Show from './components/Show'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import Filter from './components/Filter'
-
 import DeleteShow from './components/DeleteShow'
 import Topnav from './components/Topnav'
 
@@ -82,46 +84,65 @@ const App = () => {
                 updateFilter={updateFilter}
                 filterBy={filterBy}
             />
-            <div className='shows'>
-                {/* start filter by All */}
-                { filterBy === 'All' &&
-                    shows.map((show) => {
-                        return (
-                        <div className='show' key={show.id}>
-                            <Show show={show}/>
-                            <Edit
-                                handleUpdate={handleUpdate}
-                                show={show}
-                            />
-                            <DeleteShow 
-                                handleDelete={handleDelete} 
-                                value={show.id}
-                                show={show}
-                            />
-                            <br />
-                        </div>
+            <>
+                { filterBy === 'All' && shows.map((show) => {
+                    return (
+                        <Card className='card show'>
+                            <Card.Img varient='top' className='card-img' />
+                                    <iframe className='video' src={show.video}></iframe>
+                            <Card.Body>
+                                <Card.Title>
+                                    <h1>{show.title}</h1>
+                                </Card.Title>
+                                <Card.Text>
+                                    <Show show={show}/>
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer className="edit-delete-btns">
+                                <Edit
+                                    handleUpdate={handleUpdate}
+                                    show={show}
+                                />
+                                <DeleteShow
+                                    handleDelete={handleDelete}
+                                    value={show.id}
+                                    show={show}
+                                />
+                            </Card.Footer>
+                        </Card>
                     )
-                    })
-                }
+                })}
+            </>
+            <>
                 {/* start filter by category */}
                 {shows.filter(shows => shows.genre === filterBy).map((show) => {
                     return (
-                        <div className='show' key={show.id}>
-                            <Show show={show}/>
-                            <Edit
-                                handleUpdate={handleUpdate}
-                                show={show}
-                            />
-                            <DeleteShow 
-                                handleDelete={handleDelete} 
-                                value={show.id}
-                                show={show}
-                            />
-                            <br />
-                        </div>
+                        <Card className='card show'>
+                            <Card.Img varient='top' className='card-img' />
+                                    <iframe className='video' src={show.video}></iframe>
+                            <Card.Body>
+                                <Card.Title>
+                                    <h1>{show.title}</h1>
+                                </Card.Title>
+                                <Card.Text>
+                                    <Show show={show}/>
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Edit
+                                    handleUpdate={handleUpdate}
+                                    show={show}
+                                />
+                                <DeleteShow
+                                    handleDelete={handleDelete}
+                                    value={show.id}
+                                    show={show}
+                                />
+                            </Card.Footer>
+                        </Card>
                     )
                 })}
-            </div>
+            </>
         </>
     )
 }
