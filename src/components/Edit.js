@@ -37,9 +37,7 @@ const Edit = (props) => {
                     <form onSubmit={ handleSubmit }>
                         <label htmlFor='title'>Title: </label>
                         <input type='text' name='title' defaultValue={tvShow.title} onChange={handleChange} />
-
                         <br />
-
                         <label htmlFor='genre'>Genre: </label>
                         <select onChange={handleChange} defaultValue={tvShow.genre} name='genre'>
                             <option value='Horror'>Horror</option>
@@ -48,24 +46,16 @@ const Edit = (props) => {
                             <option value='Drama'>Drama</option>
                             <option value='Sci-fi'>Sci-Fi</option>
                         </select>
-
                         <br />
-
                         <label htmlFor='year'>Year: </label>
                         <input type='text' name='year' defaultValue={tvShow.year} onChange={handleChange} />
-
                         <br />
-
                         <label htmlFor='description'>Description: </label>
                         <input type='text' name='description' defaultValue={tvShow.description} onChange={handleChange} />
-
                         <br />
-
                         <label htmlFor='cast'>Cast: </label>
                         <input type='text' name='cast' defaultValue={tvShow.cast} onChange={handleChange} />
-
                         <br />
-
                         <label htmlFor='avg_rating'>Average Rating: </label>
                         <select onChange={handleChange} defaultValue={tvShow.avg_rating} name='avg_rating'>
                             <option value='1'>1</option>
@@ -74,15 +64,11 @@ const Edit = (props) => {
                             <option value='4'>4</option>
                             <option value='5'>5</option>
                         </select>
-
                         <br />
-
                         <label htmlFor='video'>Video: </label>
                         <input type='url' name='video' defaultValue={tvShow.video} onChange={handleChange} />
-
                         <br />
                         <br />
-
                         {/* <label htmlFor='added_by'>Added By: </label> */}
                         <input hidden type='text' name='added_by[]' defaultValue={tvShow.added_by} onChange={handleChange} />
                         {/* <label htmlFor='user_ratings'>User Ratings</label> */}
@@ -90,71 +76,10 @@ const Edit = (props) => {
                         {/* <label htmlFor='user_reviews'>User Reviews</label> */}
                         <input hidden type='text' name='user_reviews[]' defaultValue={tvShow.user_reviews} onChange={handleChange} />
 
-                        <input type='submit' value='Edit' />
+                        <input class="btn btn-success" type='submit' value='Edit' />
                     </form>
                 </Modal.Body>
             </Modal>
-            {/* <details>
-                <summary>Edit Show</summary>
-                <form onSubmit={ handleSubmit }>
-                    <label htmlFor='title'>Title: </label>
-                    <input type='text' name='title' defaultValue={tvShow.title} onChange={handleChange} />
-
-                    <br />
-
-                    <label htmlFor='genre'>Genre: </label>
-                    <select onChange={handleChange} defaultValue={tvShow.genre} name='genre'>
-                        <option value='Horror'>Horror</option>
-                        <option value='Comedy'>Comedy</option>
-                        <option value='Action'>Action</option>
-                        <option value='Drama'>Drama</option>
-                        <option value='Sci-fi'>Sci-Fi</option>
-                    </select>
-
-                    <br />
-
-                    <label htmlFor='year'>Year: </label>
-                    <input type='text' name='year' defaultValue={tvShow.year} onChange={handleChange} />
-
-                    <br />
-
-                    <label htmlFor='description'>Description: </label>
-                    <input type='text' name='description' defaultValue={tvShow.description} onChange={handleChange} />
-
-                    <br />
-
-                    <label htmlFor='cast'>Cast: </label>
-                    <input type='text' name='cast' defaultValue={tvShow.cast} onChange={handleChange} />
-
-                    <br />
-
-                    <label htmlFor='avg_rating'>Average Rating: </label>
-                    <select onChange={handleChange} defaultValue={tvShow.avg_rating} name='avg_rating'>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                    </select>
-
-                    <br />
-
-                    <label htmlFor='video'>Video: </label>
-                    <input type='url' name='video' defaultValue={tvShow.video} onChange={handleChange} />
-
-                    <br />
-                    <br /> */}
-
-                    {/* <label htmlFor='added_by'>Added By: </label> */}
-                    <input hidden type='text' name='added_by[]' defaultValue={tvShow.added_by} onChange={handleChange} />
-                    {/* <label htmlFor='user_ratings'>User Ratings</label> */}
-                    <input hidden type='text' name='user_ratings[]' defaultValue={tvShow.user_ratings} onChange={handleChange} />
-                    {/* <label htmlFor='user_reviews'>User Reviews</label> */}
-                    <input hidden type='text' name='user_reviews[]' defaultValue={tvShow.user_reviews} onChange={handleChange} />
-
-                    {/* <input type='submit' value='Edit' />
-                </form>
-            </details> */}
         </>
     )
 }
