@@ -104,4 +104,8 @@ a {
     .video {
         height: 600px;
     }
+  
+.create-submit-btn, .edit-submit-btn {
+  display: block;
+  margin: 0 auto;
 }
