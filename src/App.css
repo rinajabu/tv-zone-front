@@ -38,10 +38,13 @@
 }
 
 /* PERSONAL STYLING */
+.filter {
+    background-color: #D4D1DE;
+}
 
 a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 
 .top-nav {
@@ -82,11 +85,14 @@ a {
 .edit-delete-btns {
   display: flex;
   justify-content: center;
+  background-color: #212529;
 }
 
 .card {
     width: 50%;
     margin: auto;
+    margin-bottom: 20px;
+    background-color: #C3C0CC;
 }
 
 .video {
@@ -104,9 +110,16 @@ a {
     .video {
         height: 600px;
     }
-}    
+}
 
 .create-submit-btn, .edit-submit-btn {
   display: block;
   margin: 0 auto;
 }
+ body {
+     background-color: #66656B;
+ }
+
+ .nav-btn {
+     background-color: #D4D1DE;
+ }
