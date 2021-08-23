@@ -88,3 +88,8 @@ a {
   display: flex;
   justify-content: center;
 }
+
+.create-submit-btn, .edit-submit-btn {
+  display: block;
+  margin: 0 auto;
+}
