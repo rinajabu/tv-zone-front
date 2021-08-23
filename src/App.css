@@ -79,16 +79,32 @@ a {
   margin-bottom: 1em;
 }
 
-.video {
-  width: 100%;
-  height: 250px;
-}
-
 .edit-delete-btns {
   display: flex;
   justify-content: center;
 }
 
+.card {
+    width: 50%;
+    margin: auto;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 60%;
+    }
+    /* .card-img {
+        height: 500px;
+    } */
+    .video {
+        height: 600px;
+    }
+  
 .create-submit-btn, .edit-submit-btn {
   display: block;
   margin: 0 auto;

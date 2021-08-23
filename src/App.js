@@ -113,6 +113,7 @@ const App = () => {
                     )
                 })}
             </>
+            <br />
             <>
                 {/* start filter by category */}
                 {shows.filter(shows => shows.genre === filterBy).map((show) => {
