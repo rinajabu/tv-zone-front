@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form'
 // CREATE component
 const Add = (props) => {
 
-    let emptyShow = { title: '', genre: 'Horror', year: '', description: '', cast: '', avg_rating: '1', video: '', added_by: [], user_ratings: [], user_reviews: []} // default values for genre and avg_rating dropdowns
+    let emptyShow = { title: '', genre: 'Horror', year: '', description: '', cast: '', avg_rating: '1', video: '', added_by: ['default'], user_ratings: ['default'], user_reviews: ['default']} // default values for genre and avg_rating dropdowns
     let [tvShow, setTvShow] = useState(emptyShow)
     // create show modal state
     const [show, setShow] = useState(false)
@@ -23,6 +23,7 @@ const Add = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleCreate(tvShow)
+        // console.log(tvShow);
         event.target.reset()
         setTvShow(emptyShow) // resets create form field
         handleClose()

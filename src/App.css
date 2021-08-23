@@ -93,3 +93,8 @@ a {
   display: block;
   margin: 0 auto;
 }
+
+.social-logo {
+  width: 30px;
+  height: 30px;
+}
