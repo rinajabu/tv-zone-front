@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Filter = (props) => {
-    
+
     return (
         <label className='filter-dropdown'>
             <strong>Filter By Genre</strong>
@@ -12,6 +12,7 @@ const Filter = (props) => {
                 <option value='Action'>Action</option>
                 <option value='Drama'>Drama</option>
                 <option value='Sci-fi'>Sci-fi</option>
+                <option value='Feel-Good'>Feel-Good</option>
             </select>
         </label>
     )

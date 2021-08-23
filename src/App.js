@@ -13,6 +13,7 @@ import Edit from './components/Edit'
 import Filter from './components/Filter'
 import DeleteShow from './components/DeleteShow'
 import Topnav from './components/Topnav'
+import Favorites from './components/Favorites'
 
 
 const App = () => {
@@ -79,6 +80,7 @@ const App = () => {
     return (
         <>
             <Topnav />
+            <Favorites />
             <Add handleCreate={handleCreate} />
             <Filter
                 updateFilter={updateFilter}
