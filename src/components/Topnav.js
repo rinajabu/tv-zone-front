@@ -84,6 +84,7 @@ const Topnav = (props) => {
                 {currentUser.username && <h3>Welcome, {currentUser.username}</h3>}
                 <Navbar.Toggle aria-controls="navbar-dark-example" />
                 <Navbar.Collapse className="open-nav-container" id="navbar-dark-example">
+
                     {
                       authenticated ? <button onClick={handleUserLogout} class="btn btn-light">Logout</button> :
                         <div>
