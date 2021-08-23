@@ -136,7 +136,7 @@ const App = () => {
             <>
                 { filterBy === 'All' && shows.map((show) => {
                     return (
-                        <Card className='card show'>
+                        <Card border='dark' className='card show'>
                             <Card.Img varient='top' className='card-img' />
                                     <iframe className='video' src={show.video}></iframe>
                             <Card.Body>
