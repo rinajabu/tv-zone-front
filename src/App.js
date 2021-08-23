@@ -5,6 +5,8 @@ import './App.css'
 
 import Card from 'react-bootstrap/Card'
 import Carousel from 'react-bootstrap/Carousel'
+// import Modal from 'react-bootstrap/Modal'
+// import Button from 'react-bootstrap/Button'
 
 // Components Import
 import Show from './components/Show'
@@ -16,8 +18,8 @@ import Topnav from './components/Topnav'
 import Favorites from './components/Favorites'
 
 
-import Signup from './components/Signup'
-import Auth from './components/Auth'
+// import Signup from './components/Signup'
+// import Auth from './components/Auth'
 
 const App = () => {
 
@@ -27,8 +29,8 @@ const App = () => {
     let [shows, setShows] = useState([])
     const [filterBy, setFilterBy] = useState('All')
 
-    let [users, setUsers] = useState([])
-    let [currentUser, setCurrentUser] = useState({})
+    // let [users, setUsers] = useState([])
+    // let [currentUser, setCurrentUser] = useState({})
 
 // ==================
 // Event Handlers
@@ -75,39 +77,39 @@ const App = () => {
         setFilterBy(event.target.value)
     }
 
-    const getUsers = () => {
-        axios
-            .get('https://blooming-thicket-84174.herokuapp.com/api/users')
-            // .get('http://localhost:8000/api/users')
-            .then(
-                (response) => setUsers(response.data),
-                (error) => console.error(error)
-            )
-            .catch((error) => console.error(error)
-      )
-    }
+    // const getUsers = () => {
+    //     axios
+    //         .get('https://blooming-thicket-84174.herokuapp.com/api/users')
+    //         // .get('http://localhost:8000/api/users')
+    //         .then(
+    //             (response) => setUsers(response.data),
+    //             (error) => console.error(error)
+    //         )
+    //         .catch((error) => console.error(error)
+    //   )
+    // }
 
-    const handleUserCreate = (addUser) => {
-        axios
-          .post('https://blooming-thicket-84174.herokuapp.com/api/users',
-          // .post('http://localhost:8000/api/users',
-          addUser)
-          .then((response) => {
-            getUsers()
-          })
-    }
-
-    const handleUserLogin = (user) => {
-      axios
-      .put('https://blooming-thicket-84174.herokuapp.com/api/users/login', user)
-      // .put('http://localhost:8000/api/users/login', user)
-      .then(
-        (response) => {
-        setCurrentUser(response.data)
-        console.log(response.data)
-      }
-      )
-    }
+    // const handleUserCreate = (addUser) => {
+    //     axios
+    //       .post('https://blooming-thicket-84174.herokuapp.com/api/users',
+    //       // .post('http://localhost:8000/api/users',
+    //       addUser)
+    //       .then((response) => {
+    //         getUsers()
+    //       })
+    // }
+    //
+    // const handleUserLogin = (user) => {
+    //   axios
+    //   .put('https://blooming-thicket-84174.herokuapp.com/api/users/login', user)
+    //   // .put('http://localhost:8000/api/users/login', user)
+    //   .then(
+    //     (response) => {
+    //     setCurrentUser(response.data)
+    //     console.log(response.data)
+    //   }
+    //   )
+    // }
 
     useEffect(() => {
         getShows()
@@ -122,8 +124,6 @@ const App = () => {
 
             <Favorites />
 
-            <Signup handleUserCreate={handleUserCreate} />
-            <Auth handleUserLogin={handleUserLogin} currentUser={currentUser} />
 
             <Add handleCreate={handleCreate} />
             <Filter
