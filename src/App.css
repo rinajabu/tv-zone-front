@@ -38,10 +38,13 @@
 }
 
 /* PERSONAL STYLING */
+.filter {
+    background-color: #D4D1DE;
+}
 
 a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 
 .top-nav {
@@ -82,17 +85,76 @@ a {
 .edit-delete-btns {
   display: flex;
   justify-content: center;
+  background-color: #212529;
 }
 
 .card {
     width: 50%;
     margin: auto;
+    margin-bottom: 20px;
+    background-color: #C3C0CC;
 }
 
 .video {
   width: 100%;
   height: auto;
+} 
+
+.create-submit-btn, .edit-submit-btn {
+  display: block;
+  margin: 0 auto;
 }
+
+.logos-container {
+  background-color: white;
+  padding: .2em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.social-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 1em;
+}
+
+.footer-text {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.our-social-sections-container {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.create-submit-btn, .edit-submit-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+ body {
+     background-color: #66656B;
+ }
+
+ .nav-btn {
+     background-color: #D4D1DE;
+ }
+
+/*///// MEDIA QUERIES /////*/
 
 @media (min-width: 992px) {
     .card {
@@ -104,9 +166,6 @@ a {
     .video {
         height: 600px;
     }
-}    
 
-.create-submit-btn, .edit-submit-btn {
-  display: block;
-  margin: 0 auto;
 }
+

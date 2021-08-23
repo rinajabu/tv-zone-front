@@ -13,6 +13,7 @@ import Edit from './components/Edit'
 import Filter from './components/Filter'
 import DeleteShow from './components/DeleteShow'
 import Topnav from './components/Topnav'
+import Footer from './components/Footer'
 import Favorites from './components/Favorites'
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
 // ==================
 
     const handleCreate = (addShow) => {
+        console.log(addShow);
         axios
             .post('https://blooming-thicket-84174.herokuapp.com/api/shows',
             addShow)
@@ -35,6 +37,7 @@ const App = () => {
                 console.log(response)
                 getShows()
             })
+        console.log(addShow);
     }
 
     const handleDelete = (event) => {
@@ -90,7 +93,7 @@ const App = () => {
             <>
                 { filterBy === 'All' && shows.map((show) => {
                     return (
-                        <Card className='card show'>
+                        <Card border='dark' className='card show'>
                             <Card.Img varient='top' className='card-img' />
                                     <iframe className='video' src={show.video}></iframe>
                             <Card.Body>
@@ -147,6 +150,7 @@ const App = () => {
                     )
                 })}
             </>
+            <Footer />
         </>
     )
 }
