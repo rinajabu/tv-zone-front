@@ -25,12 +25,12 @@ const Signup = (props) => {
     
       <Form onSubmit={handleSubmit}>
         <FloatingLabel htmlFor='username'>Username: </FloatingLabel>
-        <Form.Control type='text' name='username' onChange={handleChange} />
+        <Form.Control type='text' name='username' onChange={handleChange} required />
 
         <br />
 
         <FloatingLabel htmlFor='password'>Password: </FloatingLabel>
-        <Form.Control type='password' name ='password' onChange={handleChange} />
+        <Form.Control type='password' name ='password' onChange={handleChange} required />
 
         <br />
 

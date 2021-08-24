@@ -152,7 +152,22 @@ const App = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="edit-delete-btns">
-                                { currentUser.username &&
+                                { currentUser.username === 'adminlogin' &&
+                                <>
+                                    <Edit
+                                        handleUpdate={handleUpdate}
+                                        show={show}
+                                        currentUser={currentUser}
+                                    />
+                                    <DeleteShow
+                                        handleDelete={handleDelete}
+                                        value={show.id}
+                                        show={show}
+                                        currentUser={currentUser}
+                                    />
+                                </>
+                                }
+                                { currentUser.username == show.added_by &&
                                 <>
                                     <Edit
                                         handleUpdate={handleUpdate}
@@ -192,7 +207,22 @@ const App = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="edit-delete-btns">
-                                { currentUser.username &&
+                                { currentUser.username === 'adminlogin' &&
+                                <>
+                                    <Edit
+                                        handleUpdate={handleUpdate}
+                                        show={show}
+                                        currentUser={currentUser}
+                                    />
+                                    <DeleteShow
+                                        handleDelete={handleDelete}
+                                        value={show.id}
+                                        show={show}
+                                        currentUser={currentUser}
+                                    />
+                                </>
+                                }
+                                { currentUser.username == show.added_by &&
                                 <>
                                     <Edit
                                         handleUpdate={handleUpdate}
