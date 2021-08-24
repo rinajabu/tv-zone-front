@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import Form from 'react-bootstrap/Form'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
+
 // USER SIGN-UP component
 const Signup = (props) => {
 
@@ -19,21 +22,21 @@ const Signup = (props) => {
 
   return(
     <>
-      <br />
-      <br />
-
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='username'>Username: </label>
-        <input type='text' name='username' onChange={handleChange} />
+    
+      <Form onSubmit={handleSubmit}>
+        <FloatingLabel htmlFor='username'>Username: </FloatingLabel>
+        <Form.Control type='text' name='username' onChange={handleChange} />
 
         <br />
 
-        <label htmlFor='password'>Password: </label>
-        <input type='password' name ='password' onChange={handleChange} />
+        <FloatingLabel htmlFor='password'>Password: </FloatingLabel>
+        <Form.Control type='password' name ='password' onChange={handleChange} />
 
-        <input class="btn btn-dark" type='submit' value="CREATE ACCOUNT"/>
+        <br />
 
-      </form>
+        <input class="btn btn-success" type='submit' value="CREATE ACCOUNT"/>
+
+      </Form>
     </>
   )
 }
