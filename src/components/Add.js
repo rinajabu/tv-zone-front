@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form'
 // CREATE component
 const Add = (props) => {
 
-    let emptyShow = { title: '', genre: 'Horror', year: '', description: '', cast: '', avg_rating: '1', video: '', added_by: ['default'], user_ratings: ['default'], user_reviews: ['default']} // default values for genre and avg_rating dropdowns
+    let emptyShow = { title: '', genre: 'Horror', year: '', description: '', cast: '', avg_rating: '1', video: '', added_by: [props.currentUser.username], user_ratings: ['default'], user_reviews: ['default']} // default values for genre and avg_rating dropdowns
     let [tvShow, setTvShow] = useState(emptyShow)
     // create show modal state
     const [show, setShow] = useState(false)
