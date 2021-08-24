@@ -38,7 +38,7 @@ const Edit = (props) => {
                 <Modal.Body>
                     <Form onSubmit={ handleSubmit }>
                         <FloatingLabel label="Title" className="mb-3">
-                            <Form.Control type="text" name='title' defaultValue={tvShow.title} onChange={handleChange} />
+                            <Form.Control type="text" name='title' defaultValue={tvShow.title} onChange={handleChange} maxLength='50' />
                         </FloatingLabel>
                         <FloatingLabel label="Genre" className="mb-3">
                             <Form.Select onChange={handleChange} name='genre' defaultValue={tvShow.genre}>
@@ -51,13 +51,13 @@ const Edit = (props) => {
                             </Form.Select>
                         </FloatingLabel>
                         <FloatingLabel label="Year" className="mb-3">
-                            <Form.Control type="text" name='year' defaultValue={tvShow.year} onChange={handleChange} />
+                            <Form.Control type="text" name='year' defaultValue={tvShow.year} onChange={handleChange} maxLength='20' />
                         </FloatingLabel>
                         <FloatingLabel label="Description" className="mb-3">
-                            <Form.Control type="text" name='description' defaultValue={tvShow.description} onChange={handleChange} />
+                            <Form.Control type="text" name='description' defaultValue={tvShow.description} onChange={handleChange} maxLength='100' />
                         </FloatingLabel>
                         <FloatingLabel label="Cast" className="mb-3">
-                            <Form.Control type="text" name='cast' defaultValue={tvShow.cast} onChange={handleChange} />
+                            <Form.Control type="text" name='cast' defaultValue={tvShow.cast} onChange={handleChange} maxLength='50' />
                         </FloatingLabel>
                         <FloatingLabel label="Average Rating" className="mb-3">
                             <Form.Select onChange={handleChange} name='avg_rating' defaultValue={tvShow.avg_rating}>
@@ -69,7 +69,7 @@ const Edit = (props) => {
                             </Form.Select>
                         </FloatingLabel>
                         <FloatingLabel label="Video URL" className="mb-3">
-                            <Form.Control type="url" name='video' defaultValue={tvShow.video} onChange={handleChange} />
+                            <Form.Control type="url" name='video' defaultValue={tvShow.video} onChange={handleChange} maxLength='200' />
                         </FloatingLabel>
                         {/*///// HIDDEN INPUTS FOR NOW /////*/}
                         {/* <label htmlFor='added_by'>Added By: </label> */}
