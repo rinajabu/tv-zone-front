@@ -25,12 +25,12 @@ const Auth = (props) => {
 
       <Form onSubmit={handleSubmit}>
         <FloatingLabel htmlFor='username'>Username: </FloatingLabel>
-        <Form.Control type='text' name='username' onChange={handleChange} required />
+        <Form.Control type='text' name='username' onChange={handleChange} required maxLength='75' />
 
         <br />
 
         <FloatingLabel htmlFor='password'>Password: </FloatingLabel>
-        <Form.Control type='password' name='password' onChange={handleChange} required />
+        <Form.Control type='password' name='password' onChange={handleChange} required maxLength='10000' />
 
         <br />
 
