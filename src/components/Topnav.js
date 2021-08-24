@@ -84,15 +84,17 @@ const Topnav = (props) => {
                 {currentUser.username && <h3>Welcome, {currentUser.username}</h3>}
                 <Navbar.Toggle aria-controls="navbar-dark-example" />
                 <Navbar.Collapse className="open-nav-container" id="navbar-dark-example">
-                    <a href="#"><button class="sign-up-btn btn nav-btn"><strong>Sign Up</strong></button></a>
-                    <a href="#"><button class="btn nav-btn"><strong>Login</strong></button></a>
-
+                
 
                     {
                       authenticated ? <button onClick={handleUserLogout} class="btn btn-light">Logout</button> :
                         <div>
-                            <button onClick={openSignUpModal} class="btn btn-light">Sign Up</button>
-                            <button onClick={openLoginModal} class="btn btn-light">Login</button>
+                            <button onClick={openSignUpModal} class="sign-up-btn btn nav-btn">
+                                <strong>Sign Up</strong>
+                            </button>
+                            <button onClick={openLoginModal} class="btn nav-btn">
+                                <strong>Login</strong>
+                            </button>
                         </div>
                     }
 
