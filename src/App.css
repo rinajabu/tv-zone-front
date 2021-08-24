@@ -170,6 +170,11 @@ a {
      color: #D4D1DE;
  }
 
+ /* .user-welcome {
+     justify-content: flex-end;
+ } */
+
+
 /*///// MEDIA QUERIES /////*/
 
 @media (min-width: 992px) {
