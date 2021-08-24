@@ -147,4 +147,42 @@ a {
     .video {
         height: 600px;
     }
-}   
+}  
+
+@media (max-width: 991px) {
+    .card {
+        width: 70%;
+    }
+    
+    .video {
+        height: 400px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .card {
+        width: 80%;
+    }
+
+    .video {
+      height: 300px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .card {
+        width: 90%;
+    }
+
+    .video {
+      height: 250px;
+    }
+
+    .our-social-sections-container {
+        justify-content: space-between;
+    }
+
+}
