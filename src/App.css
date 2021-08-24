@@ -51,6 +51,11 @@ a {
   padding: .5em 1em;
 }
 
+.user-welcome {
+  color: white;
+  margin: 0;
+}
+
 .nav-title {
   font-size: 2em;
 }
