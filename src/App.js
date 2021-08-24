@@ -23,6 +23,11 @@ const App = () => {
 // ==================
     let [shows, setShows] = useState([])
     const [filterBy, setFilterBy] = useState('All')
+    // user state
+    let [currentUser, setCurrentUser] = useState({})
+    // login states
+    let [loginModal, setLoginModal] = useState(false)
+    let [authenticated, setAuthenticated] = useState(false)
 
 // ==================
 // Event Handlers
@@ -71,6 +76,33 @@ const App = () => {
         setFilterBy(event.target.value)
     }
 
+    const handleUserLogout = (user) => {
+        setCurrentUser({})
+        setAuthenticated(false)
+    }
+
+    const openLoginModal = (event) => {
+        event.preventDefault()
+        if(loginModal === false) {
+            setLoginModal(true)
+        } else {
+            setLoginModal(false)
+        }
+    }
+
+    const handleUserLogin = (user) => {
+        axios
+            .put('https://blooming-thicket-84174.herokuapp.com/api/users/login', user)
+            // .put('http://localhost:8000/api/users/login', user)
+            .then(
+            (response) => {
+            setCurrentUser(response.data)
+            setAuthenticated(true)
+            setLoginModal(false)
+            }
+        )
+  }
+
     useEffect(() => {
         getShows()
     }, [])
@@ -80,8 +112,15 @@ const App = () => {
 // ======================
     return (
         <>
-            <Topnav />
-
+            <Topnav 
+                currentUser={currentUser} 
+                loginModal={loginModal}
+                authenticated={authenticated}
+                handleUserLogin={handleUserLogin} 
+                handleUserLogout={handleUserLogout}
+                openLoginModal={openLoginModal}
+            />
+        
             <Favorites />
 
 
@@ -124,7 +163,7 @@ const App = () => {
                 {/* start filter by category */}
                 {shows.filter(shows => shows.genre === filterBy).map((show) => {
                     return (
-                        <Card className='card show'>
+                        <Card border='dark' className='card show'>
                             <Card.Img varient='top' className='card-img' />
                                     <iframe className='video' src={show.video}></iframe>
                             <Card.Body>
@@ -135,7 +174,7 @@ const App = () => {
                                     <Show show={show}/>
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Footer>
+                            <Card.Footer className="edit-delete-btns">
                                 <Edit
                                     handleUpdate={handleUpdate}
                                     show={show}
