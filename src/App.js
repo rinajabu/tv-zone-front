@@ -101,7 +101,7 @@ const App = () => {
             setLoginModal(false)
             }
         )
-  }
+    }
 
     useEffect(() => {
         getShows()
@@ -123,7 +123,10 @@ const App = () => {
             { currentUser.username &&
             <>
                 <Favorites />
-                <Add handleCreate={handleCreate} />
+                <Add 
+                    handleCreate={handleCreate} 
+                    currentUser={currentUser}
+                />
             </>
             }
 
@@ -142,7 +145,10 @@ const App = () => {
                                     <h1>{show.title}</h1>
                                 </Card.Title>
                                 <Card.Text>
-                                    <Show show={show}/>
+                                    <Show 
+                                        show={show}
+                                        currentUser={currentUser}
+                                    />
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="edit-delete-btns">
@@ -151,11 +157,13 @@ const App = () => {
                                     <Edit
                                         handleUpdate={handleUpdate}
                                         show={show}
+                                        currentUser={currentUser}
                                     />
                                     <DeleteShow
                                         handleDelete={handleDelete}
                                         value={show.id}
                                         show={show}
+                                        currentUser={currentUser}
                                     />
                                 </>
                                 }
@@ -177,7 +185,10 @@ const App = () => {
                                     <h1>{show.title}</h1>
                                 </Card.Title>
                                 <Card.Text>
-                                    <Show show={show}/>
+                                    <Show 
+                                        show={show}
+                                        currentUser={currentUser}
+                                    />
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="edit-delete-btns">
@@ -186,11 +197,13 @@ const App = () => {
                                     <Edit
                                         handleUpdate={handleUpdate}
                                         show={show}
+                                        currentUser={currentUser}
                                     />
                                     <DeleteShow
                                         handleDelete={handleDelete}
                                         value={show.id}
                                         show={show}
+                                        currentUser={currentUser}
                                     />
                                 </>
                                 }

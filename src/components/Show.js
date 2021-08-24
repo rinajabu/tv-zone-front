@@ -4,6 +4,7 @@ const Show = (props) => {
     return (
         <>
             {/* <h4>Title: {props.show.title}</h4> */}
+            <h5>Added By: {props.show.added_by}</h5>
             <h5>Genre: {props.show.genre}</h5>
             <h5>Year: {props.show.year}</h5>
             <h5>Description: {props.show.description}</h5>
