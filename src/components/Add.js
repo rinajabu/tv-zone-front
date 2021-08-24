@@ -81,7 +81,7 @@ const Add = (props) => {
                         <input hidden type='text' name='user_ratings[]' onChange={handleChange} />
                         {/* <label htmlFor='user_reviews'>User Reviews</label> */}
                         <input hidden type='text' name='user_reviews[]' onChange={handleChange} />
-                        <input class="create-submit-btn btn btn-dark" type='submit' />
+                        <input class="create-submit-btn btn btn-success" type='submit' />
                     </Form>
                 </Modal.Body>
             </Modal>
