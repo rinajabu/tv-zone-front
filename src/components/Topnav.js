@@ -63,9 +63,11 @@ const Topnav = (props) => {
                         </button> :
                     <div>
                         <button onClick={openSignUpModal} class="sign-up-btn btn nav-btn">
-                            <strong>Sign Up</strong></button>
+                            <strong>Sign Up</strong>
+                        </button>
                         <button onClick={props.openLoginModal} class="btn nav-btn">
-                            <strong>Login</strong></button>
+                            <strong>Login</strong>
+                        </button>
                     </div>
                 }
 
@@ -73,31 +75,23 @@ const Topnav = (props) => {
             </Navbar>
             { signUpModal &&
                 <Modal.Dialog id="signup-modal">
-                    <Modal.Header>
+                    <Modal.Header closeButton onClick={openSignUpModal}>
                         <Modal.Title>Create an Account</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Signup handleUserCreate={handleUserCreate} />
                     </Modal.Body>
-                    <Modal.Footer>
-                        <CloseButton onClick={openSignUpModal} />
-                        <br />
-                    </Modal.Footer>
                 </Modal.Dialog>
             }
 
             { props.loginModal &&
                 <Modal.Dialog id="login-modal">
-                    <Modal.Header>
-                        <Modal.Title>Sign In</Modal.Title>
+                    <Modal.Header closeButton onClick={props.openLoginModal} >
+                        <Modal.Title>Sign Into Your Account</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Auth handleUserLogin={props.handleUserLogin} currentUser={props.currentUser} />
                     </Modal.Body>
-                    <Modal.Footer>
-                        <CloseButton onClick={props.openLoginModal} />
-                        <br />
-                    </Modal.Footer>
                 </Modal.Dialog>
             }
         </>
