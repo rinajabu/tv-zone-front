@@ -81,6 +81,7 @@ a {
   align-items: center;
   align-content: center;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .show {
@@ -108,6 +109,11 @@ a {
 .create-submit-btn, .edit-submit-btn {
   display: block;
   margin: 0 auto;
+}
+
+.favorite-btn {
+  display: block;
+  margin: 1em auto 0;
 }
 
 .logos-container {

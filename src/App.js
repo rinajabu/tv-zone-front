@@ -120,11 +120,13 @@ const App = () => {
                 handleUserLogout={handleUserLogout}
                 openLoginModal={openLoginModal}
             />
-        
-            <Favorites />
+            { currentUser.username &&
+            <>
+                <Favorites />
+                <Add handleCreate={handleCreate} />
+            </>
+            }
 
-
-            <Add handleCreate={handleCreate} />
             <Filter
                 updateFilter={updateFilter}
                 filterBy={filterBy}
@@ -144,15 +146,19 @@ const App = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="edit-delete-btns">
-                                <Edit
-                                    handleUpdate={handleUpdate}
-                                    show={show}
-                                />
-                                <DeleteShow
-                                    handleDelete={handleDelete}
-                                    value={show.id}
-                                    show={show}
-                                />
+                                { currentUser.username &&
+                                <>
+                                    <Edit
+                                        handleUpdate={handleUpdate}
+                                        show={show}
+                                    />
+                                    <DeleteShow
+                                        handleDelete={handleDelete}
+                                        value={show.id}
+                                        show={show}
+                                    />
+                                </>
+                                }
                             </Card.Footer>
                         </Card>
                     )
@@ -175,15 +181,19 @@ const App = () => {
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="edit-delete-btns">
-                                <Edit
-                                    handleUpdate={handleUpdate}
-                                    show={show}
-                                />
-                                <DeleteShow
-                                    handleDelete={handleDelete}
-                                    value={show.id}
-                                    show={show}
-                                />
+                                { currentUser.username &&
+                                <>
+                                    <Edit
+                                        handleUpdate={handleUpdate}
+                                        show={show}
+                                    />
+                                    <DeleteShow
+                                        handleDelete={handleDelete}
+                                        value={show.id}
+                                        show={show}
+                                    />
+                                </>
+                                }
                             </Card.Footer>
                         </Card>
                     )
