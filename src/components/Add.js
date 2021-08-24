@@ -41,7 +41,7 @@ const Add = (props) => {
                 <Modal.Body>
                     <Form onSubmit={ handleSubmit }>
                         <FloatingLabel label="Title" className="mb-3">
-                            <Form.Control type="text" name='title' onChange={handleChange} required />
+                            <Form.Control type="text" name='title' onChange={handleChange} maxLength='50' required />
                         </FloatingLabel>
                         <FloatingLabel label="Genre" className="mb-3">
                             <Form.Select onChange={handleChange} name='genre' defaultValue={tvShow.genre}>
@@ -54,13 +54,13 @@ const Add = (props) => {
                             </Form.Select>
                         </FloatingLabel>
                         <FloatingLabel label="Year" className="mb-3">
-                            <Form.Control type="text" name='year' onChange={handleChange} required />
+                            <Form.Control type="text" name='year' onChange={handleChange} maxLength='20' required />
                         </FloatingLabel>
                         <FloatingLabel label="Description" className="mb-3">
-                            <Form.Control type="text" name='description' onChange={handleChange} required />
+                            <Form.Control type="text" name='description' onChange={handleChange} maxLength='100' required />
                         </FloatingLabel>
                         <FloatingLabel label="Cast" className="mb-3">
-                            <Form.Control type="text" name='cast' onChange={handleChange} required />
+                            <Form.Control type="text" name='cast' onChange={handleChange} maxLength='50' required />
                         </FloatingLabel>
                         <FloatingLabel label="Average Rating" className="mb-3">
                             <Form.Select onChange={handleChange} name='avg_rating' defaultValue={tvShow.avg_rating}>
@@ -72,7 +72,7 @@ const Add = (props) => {
                             </Form.Select>
                         </FloatingLabel>
                         <FloatingLabel label="Video URL" className="mb-3">
-                            <Form.Control type="url" name='video' onChange={handleChange} required />
+                            <Form.Control type="url" name='video' onChange={handleChange} maxLength='200' required />
                         </FloatingLabel>
                         {/*///// HIDDEN INPUTS FOR NOW /////*/}
                         {/* <label htmlFor='added_by'>Added By: </label> */}
