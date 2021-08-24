@@ -101,7 +101,7 @@ const App = () => {
             setLoginModal(false)
             }
         )
-  }
+    }
 
     useEffect(() => {
         getShows()
