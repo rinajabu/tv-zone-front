@@ -176,13 +176,13 @@ a {
     .video {
         height: 600px;
     }
-}  
+}
 
 @media (max-width: 991px) {
     .card {
         width: 70%;
     }
-    
+
     .video {
         height: 400px;
     }

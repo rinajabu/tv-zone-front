@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import CloseButton from 'react-bootstrap/CloseButton'
 
 import Signup from './Signup'
 import Auth from './Auth'
@@ -56,10 +57,15 @@ const Topnav = (props) => {
                 <Navbar.Collapse className="open-nav-container" id="navbar-dark-example">
 
                 {
-                    props.authenticated ? <button onClick={props.handleUserLogout} class="btn btn-light">Logout</button> :
+                    props.authenticated ?
+                        <button onClick={props.handleUserLogout} class="btn nav-btn">
+                            <strong>Logout</strong>
+                        </button> :
                     <div>
-                        <button onClick={openSignUpModal} class="sign-up-btn btn btn-light">Sign Up</button>
-                        <button onClick={props.openLoginModal} class="btn btn-light">Login</button>
+                        <button onClick={openSignUpModal} class="sign-up-btn btn nav-btn">
+                            <strong>Sign Up</strong></button>
+                        <button onClick={props.openLoginModal} class="btn nav-btn">
+                            <strong>Login</strong></button>
                     </div>
                 }
 
@@ -74,7 +80,7 @@ const Topnav = (props) => {
                         <Signup handleUserCreate={handleUserCreate} />
                     </Modal.Body>
                     <Modal.Footer>
-                        <button onClick={openSignUpModal} class="btn btn-dark">Close</button>
+                        <CloseButton onClick={openSignUpModal} />
                         <br />
                     </Modal.Footer>
                 </Modal.Dialog>
@@ -89,7 +95,7 @@ const Topnav = (props) => {
                         <Auth handleUserLogin={props.handleUserLogin} currentUser={props.currentUser} />
                     </Modal.Body>
                     <Modal.Footer>
-                        <button onClick={props.openLoginModal} class="btn btn-dark">Close</button>
+                        <CloseButton onClick={props.openLoginModal} />
                         <br />
                     </Modal.Footer>
                 </Modal.Dialog>
