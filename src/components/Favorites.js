@@ -14,7 +14,7 @@ const Favorites = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className='favorite-btn' variant="primary" onClick={handleShow}>
         Favorites
       </Button>
 
